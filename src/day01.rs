@@ -15,9 +15,9 @@ fn get_input() -> String {
 fn calculate_fuel(mass: i32) -> i32 {
     let fuel = mass / 3 - 2;
     if fuel <= 0 {
-        return 0
+        0
     } else {
-        return fuel + calculate_fuel(fuel)
+        fuel + calculate_fuel(fuel)
     }
 }
 
