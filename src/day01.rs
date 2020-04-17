@@ -22,12 +22,7 @@ mod tests {
 
     #[test]
     fn test_get_input() {
-        // we can't chain like get_input().lines().collect() because lines() produces slices, and
-        // the underlying string (i.e. the string referenced by the slices) gets freed if its not
-        // persisted in a variable
-        let input = get_input();
-        let lines: Vec<&str> = input.lines().collect();
-        assert_eq!(lines[0], "62371");
+        assert_eq!(get_input().lines().next().unwrap(), "62371");
     }
 
     #[test]
