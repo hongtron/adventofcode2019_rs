@@ -1,15 +1,10 @@
 use std::fs;
 
 fn part_one() -> i32 {
-    let mut fuel_total = 0;
-    let masses = get_input();
-    for mass in masses.lines() {
-        let parsed_mass = mass.parse::<i32>().unwrap();
-        let fuel = parsed_mass/3 - 2;
-        fuel_total += fuel;
-    }
-
-   fuel_total
+    get_input()
+        .lines()
+        .map(|m| m.parse::<i32>().unwrap() / 3 - 2)
+        .sum()
 }
 
 fn get_input() -> String {
